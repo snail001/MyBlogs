@@ -6,25 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://snail001.github.io">
-  <title>articles | Snail Blogs</title>
+  <title>在线工具 | Snail的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Snail Blogs">
-<meta name="keywords" content="Snail Blogs|每一个程序猿都怀揣着改变世界的伟大梦想。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="articles">
-<meta property="og:url" content="https://snail001.github.io/articles/index.html">
-<meta property="og:site_name" content="Snail Blogs">
-<meta property="og:description" content="Snail Blogs">
+  <meta name="description" content="今天周末在家闲着没事干，找到一部老电视剧《富贵》。改编自余华小说《活着》，讲诉一个地主少爷福贵一生的经历，看到解放后分地，富贵被分为贫农，而当初得到他家产的龙二因为是地主，并且破坏解放成果被枪决。富贵感叹到要不是当初把家产败光了，今天被枪决的可能就是他了。其实想想确实，不能因为一时的得失太过于记较，谁知道是富是祸……  SpringMvc处理流程">
+<meta name="keywords" content="SpringMvc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在线工具">
+<meta property="og:url" content="https://snail001.github.io/2018/08/25/SpringMvc-HttpServletBean.html">
+<meta property="og:site_name" content="Snail的博客">
+<meta property="og:description" content="今天周末在家闲着没事干，找到一部老电视剧《富贵》。改编自余华小说《活着》，讲诉一个地主少爷福贵一生的经历，看到解放后分地，富贵被分为贫农，而当初得到他家产的龙二因为是地主，并且破坏解放成果被枪决。富贵感叹到要不是当初把家产败光了，今天被枪决的可能就是他了。其实想想确实，不能因为一时的得失太过于记较，谁知道是富是祸……  SpringMvc处理流程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-19T03:42:19.192Z">
+<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/9e62a1ad2463b9786baca58acf22bfd7?fid=2622174695-250528-366855025866832&time=1535205600&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-5pqa4ba6FVZQ4VmPihWve1vYL%2Fk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=5495335277505532565&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
+<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/962a13c14d7875663c9093235895f136?fid=2622174695-250528-384363975239577&time=1535205600&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-ufESons9WjX52RZ8%2Fma%2FkA0pWaE%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=5495321266280608614&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
+<meta property="og:updated_time" content="2018-08-25T14:41:23.916Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="articles">
-<meta name="twitter:description" content="Snail Blogs">
+<meta name="twitter:title" content="在线工具">
+<meta name="twitter:description" content="今天周末在家闲着没事干，找到一部老电视剧《富贵》。改编自余华小说《活着》，讲诉一个地主少爷福贵一生的经历，看到解放后分地，富贵被分为贫农，而当初得到他家产的龙二因为是地主，并且破坏解放成果被枪决。富贵感叹到要不是当初把家产败光了，今天被枪决的可能就是他了。其实想想确实，不能因为一时的得失太过于记较，谁知道是富是祸……  SpringMvc处理流程">
+<meta name="twitter:image" content="https://thumbnail0.baidupcs.com/thumbnail/9e62a1ad2463b9786baca58acf22bfd7?fid=2622174695-250528-366855025866832&time=1535205600&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-5pqa4ba6FVZQ4VmPihWve1vYL%2Fk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=5495335277505532565&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
   
-    <link rel="alternative" href="/atom.xml" title="Snail Blogs" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Snail的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="https://avatars3.githubusercontent.com/u/7579328?s=400&u=5825a05617c0054b6aca1043de41c23780e36649&v=4">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -44,14 +47,14 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #80AFF6"></div>
+<div class="overlay" style="background: #336699"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<img src="https://avatars3.githubusercontent.com/u/7579328?s=400&amp;u=5825a05617c0054b6aca1043de41c23780e36649&amp;v=4" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Snail Blogs</a></h1>
+		  <h1 class="header-author"><a href="/">Snail</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">每一个程序猿都怀揣着改变世界的伟大梦想。</p>
@@ -62,7 +65,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/articles">随笔</a></li>
+				<li><a href="/archives">文章</a></li>
+	        
+				<li><a href="/photos">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -73,10 +78,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -84,14 +85,6 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
 			</div>
 		</nav>
 	</header>		
@@ -101,7 +94,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #80AFF6"></div>
+  	<div class="overlay js-overlay" style="background: #336699"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -111,7 +104,7 @@
 				<img src="https://avatars3.githubusercontent.com/u/7579328?s=400&amp;u=5825a05617c0054b6aca1043de41c23780e36649&amp;v=4" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Snail Blogs</h1>
+			  <h1 class="header-author js-header-author">Snail</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>每一个程序猿都怀揣着改变世界的伟大梦想。<i class="icon icon-quo-right"></i></p>
@@ -122,29 +115,25 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/articles">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/photos">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -159,110 +148,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-SpringMvc-HttpServletBean" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      articles
+      在线工具
     </h1>
   
 
         
-        <a href="/articles/index.html" class="archive-article-date">
-  	<time datetime="2018-05-19T03:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
+        <a href="/2018/08/25/SpringMvc-HttpServletBean.html" class="archive-article-date">
+  	<time datetime="2018-08-25T13:50:34.355Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
+        <blockquote>
+<p>今天周末在家闲着没事干，找到一部老电视剧《富贵》。改编自余华小说《活着》，讲诉一个地主少爷福贵一生的经历，看到解放后分地，富贵被分为贫农，而当初得到他家产的龙二因为是地主，并且破坏解放成果被枪决。富贵感叹到要不是当初把家产败光了，今天被枪决的可能就是他了。其实想想确实，不能因为一时的得失太过于记较，谁知道是富是祸……</p>
+</blockquote>
+<h6 id="SpringMvc处理流程"><a href="#SpringMvc处理流程" class="headerlink" title="SpringMvc处理流程"></a>SpringMvc处理流程</h6><p><img src="https://thumbnail0.baidupcs.com/thumbnail/9e62a1ad2463b9786baca58acf22bfd7?fid=2622174695-250528-366855025866832&amp;time=1535205600&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-5pqa4ba6FVZQ4VmPihWve1vYL%2Fk%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5495335277505532565&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt=""></p>
+<a id="more"></a>
+<h5 id="HttpServletBean"><a href="#HttpServletBean" class="headerlink" title="HttpServletBean"></a>HttpServletBean</h5><p>HttpServletBean的init方法<br><img src="https://thumbnail0.baidupcs.com/thumbnail/962a13c14d7875663c9093235895f136?fid=2622174695-250528-384363975239577&amp;time=1535205600&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-ufESons9WjX52RZ8%2Fma%2FkA0pWaE%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5495321266280608614&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt=""></p>
+<p>HttpServletBean主要处理两件事情：</p>
+<p>1、将Servlet中参数使用BeanWrapper设置到DispatcherServlet的相关属性。</p>
+<p>2、调用模板方法中的initServletBean。</p>
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
+
       
     </div>
     <div class="article-info article-info-index">
       
       
-      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMvc</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programing//" class="article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://snail001.github.io/articles/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
@@ -270,6 +218,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/23/在线工具.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在线工具</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -307,10 +265,9 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Snail Blogs
+    		&copy; 2018 Snail
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
     </div>
   </div>
@@ -320,7 +277,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -351,25 +308,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -390,7 +339,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">tags</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringMvc</a>
               </li>
             
             <div class="clearfix"></div>
@@ -437,43 +386,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">从明天起，做一个幸福的人&lt;br&gt;&lt;br&gt;喂马，劈柴，周游世界&lt;br&gt;&lt;br&gt;从明天起，关心粮食和蔬菜&lt;br&gt;&lt;br&gt;我有一所房子，面朝大海，春暖花开...</div>
   	  	
     	</section>
     
