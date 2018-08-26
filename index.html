@@ -170,16 +170,9 @@
 <p>有生活的时候就有幸福。 —— 列夫·托尔斯泰</p>
 </blockquote>
 <p><img src="https://thumbnail0.baidupcs.com/thumbnail/148447a6a204b6d29eac7cfff75941f9?fid=2622174695-250528-644806372164050&amp;time=1535288400&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-YFs2oO0F%2FWjWyprQ%2FXKwk7IEWMc%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5517375639902463690&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt=""></p>
-<h6 id="FrameworkServlet干了什么"><a href="#FrameworkServlet干了什么" class="headerlink" title="FrameworkServlet干了什么"></a>FrameworkServlet干了什么</h6><p>上一遍《<a href="https://snail001.github.io/2018/08/25/SpringMvc-HttpServletBean.html">SpringMvc-HttpServletBean</a>》中讲到HttpServletBean中有一个工作是调用initServletBean，但HttpServletBean中并没有实现这个方法，只是一个模板方法，而是在FrameworkServlet中重写了，代码如下：</p>
-<p><img src="https://thumbnail0.baidupcs.com/thumbnail/dded178cd48948ade5eb189d06270f2d?fid=2622174695-250528-890946543371153&amp;time=1535288400&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-bCwKuzeKkBp8lj98hkt1%2BdYHRk4%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5517333945201645259&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt=""></p>
-<h6 id="核心代码做了两件事"><a href="#核心代码做了两件事" class="headerlink" title="核心代码做了两件事"></a>核心代码做了两件事</h6><p>1、初始化WebApplicationContext（initWebApplicationContext）。</p>
-<p>2、调用initFrameworkServlet，和initServletBean一样也是个模方法，没有具体的实现。</p>
-<h6 id="initWebApplicationContext干了什么"><a href="#initWebApplicationContext干了什么" class="headerlink" title="initWebApplicationContext干了什么"></a>initWebApplicationContext干了什么</h6><p><img src="https://thumbnail0.baidupcs.com/thumbnail/1c9fd6fb90241b69278abc5a6f97c10d?fid=2622174695-250528-47639103725833&amp;time=1535288400&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-2wUvNHpYt3AlXQnKGxpUS8en6o4%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5517362621816490478&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt=""></p>
-<p>我们可以看到initWebApplicationContext只做了核心的三件事</p>
-<p>1、获取spring的根容器rootContext.</p>
-<p>2、设置webApplicationContext,在合适的情况调用onRefresh方法。</p>
-<p>3、将WebApplicationContext设置到ServletContext中。</p>
-
+        
+          <a class="article-more-a" href="/2018/08/26/SpringMvc-FrameworkServlet.html#more">more >></a>
+        
       
 
       
@@ -542,7 +535,7 @@
         <blockquote>
 <p>作者：屈原</p>
 </blockquote>
-<p>帝高阳之苗裔兮，朕皇考曰伯庸。<br>摄提贞于孟陬兮，惟庚寅吾以降。<br>皇览揆余初度兮，肇锡余以嘉名。<br>名余曰正则兮，字余曰灵均。<br>纷吾既有此内美兮，又重之以修能。<br>扈江离与辟芷兮，纫秋兰以为佩。<br>汩余若将不及兮，恐年岁之不吾与。<br>朝搴阰之木兰兮，夕揽洲之宿莽。<br>
+<p>帝高阳之苗裔兮，朕皇考曰伯庸。<br>摄提贞于孟陬兮，惟庚寅吾以降。<br>皇览揆余初度兮，肇锡余以嘉名。<br>名余曰正则兮，字余曰灵均。<br>纷吾既有此内美兮，又重之以修能。<br>扈江离与辟芷兮，纫秋兰以为佩。<br>汩余若将不及兮，恐年岁之不吾与。<br>朝搴阰之木兰兮，夕揽洲之宿莽。</p>
         
           <a class="article-more-a" href="/2018/05/20/摘《离骚》.html#more">more >></a>
         
@@ -761,11 +754,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringMvc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMvc</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>
