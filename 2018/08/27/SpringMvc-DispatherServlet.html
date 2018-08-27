@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://snail001.github.io">
-  <title>Tag: 工具 | Snail的博客</title>
+  <title>SpringMvc-DispatherServlet | Snail的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Snail的博客">
-<meta name="keywords" content="Snail的博客|每一个程序猿都怀揣着改变世界的伟大梦想。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Snail的博客">
-<meta property="og:url" content="https://snail001.github.io/tags/工具/index.html">
+  <meta name="description" content="业精于勤，荒于嬉；行成于思，毁于随。——韩愈">
+<meta name="keywords" content="SpringMvc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringMvc-DispatherServlet">
+<meta property="og:url" content="https://snail001.github.io/2018/08/27/SpringMvc-DispatherServlet.html">
 <meta property="og:site_name" content="Snail的博客">
-<meta property="og:description" content="Snail的博客">
+<meta property="og:description" content="业精于勤，荒于嬉；行成于思，毁于随。——韩愈">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/27/PLN9Rf.jpg">
+<meta property="og:updated_time" content="2018-08-27T14:35:41.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Snail的博客">
-<meta name="twitter:description" content="Snail的博客">
+<meta name="twitter:title" content="SpringMvc-DispatherServlet">
+<meta name="twitter:description" content="业精于勤，荒于嬉；行成于思，毁于随。——韩愈">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/08/27/PLN9Rf.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Snail的博客" type="application/atom+xml">
   
@@ -144,48 +147,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SpringMvc-DispatherServlet" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringMvc-DispatherServlet
+    </h1>
+  
+
+        
+        <a href="/2018/08/27/SpringMvc-DispatherServlet.html" class="archive-article-date">
+  	<time datetime="2018-08-27T14:02:35.303Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>业精于勤，荒于嬉；行成于思，毁于随。——韩愈</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2018/08/27/PLN9Rf.jpg" alt=""></p>
+<a id="more"></a>
+<h6 id="Spring-MVC最核心的类"><a href="#Spring-MVC最核心的类" class="headerlink" title="Spring MVC最核心的类"></a>Spring MVC最核心的类</h6><p>DispatherServlet最Spring MVC中最核心的一个类，我们称之为前端控制器。理解DispatherServlet的处理流程，有助于我们更好的理解Spring MVC的精髓。</p>
+<p>1、客启端通过浏览器发送一个HTTP请求，服务器端接收到请求后判断请求的路径是否符合我们在web.xm配置规则，如果是则进入DispatherServlet的处理流程。</p>
+<p>2、DispatherServlet接收到请后，根据请求的信息通过HandlerMapping找到符合条件的Handler（相当于Controller）。</p>
+<p>3、找到Hander后通过HandlerAdapter进行封装调用Handler.</p>
+<p>4、调用处理完逻辑后会返回ModelAndView给DispatherServlet。</p>
+<p>5、拿到ModelAndView之后需要返回视图，通过ViewResolver解析得到具体的视图，返回给DispatherServlet。</p>
+<p>6、DispatherServlet拿到视图View和之前Model后进行页面渲染。</p>
+<p>通过DispatherServlet这一系列的处理，将后有流程串联起来。具体处理代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception &#123;</span><br><span class="line">        HttpServletRequest processedRequest = request;</span><br><span class="line">        HandlerExecutionChain mappedHandler = null;</span><br><span class="line">        boolean multipartRequestParsed = false;</span><br><span class="line">        WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                ModelAndView mv = null;</span><br><span class="line">                Object dispatchException = null;</span><br><span class="line"></span><br><span class="line">                try &#123;</span><br><span class="line">                    processedRequest = this.checkMultipart(request);</span><br><span class="line">                    multipartRequestParsed = processedRequest != request;</span><br><span class="line">                    mappedHandler = this.getHandler(processedRequest);</span><br><span class="line">                    if (mappedHandler == null || mappedHandler.getHandler() == null) &#123;</span><br><span class="line">                        this.noHandlerFound(processedRequest, response);</span><br><span class="line">                        return;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    HandlerAdapter ha = this.getHandlerAdapter(mappedHandler.getHandler());</span><br><span class="line">                    String method = request.getMethod();</span><br><span class="line">                    boolean isGet = &quot;GET&quot;.equals(method);</span><br><span class="line">                    if (isGet || &quot;HEAD&quot;.equals(method)) &#123;</span><br><span class="line">                        long lastModified = ha.getLastModified(request, mappedHandler.getHandler());</span><br><span class="line">                        if (this.logger.isDebugEnabled()) &#123;</span><br><span class="line">                            this.logger.debug(&quot;Last-Modified value for [&quot; + getRequestUri(request) + &quot;] is: &quot; + lastModified);</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        if ((new ServletWebRequest(request, response)).checkNotModified(lastModified) &amp;&amp; isGet) &#123;</span><br><span class="line">                            return;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    if (!mappedHandler.applyPreHandle(processedRequest, response)) &#123;</span><br><span class="line">                        return;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    mv = ha.handle(processedRequest, response, mappedHandler.getHandler());</span><br><span class="line">                    if (asyncManager.isConcurrentHandlingStarted()) &#123;</span><br><span class="line">                        return;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    this.applyDefaultViewName(processedRequest, mv);</span><br><span class="line">                    mappedHandler.applyPostHandle(processedRequest, response, mv);</span><br><span class="line">                &#125; catch (Exception var20) &#123;</span><br><span class="line">                    dispatchException = var20;</span><br><span class="line">                &#125; catch (Throwable var21) &#123;</span><br><span class="line">                    dispatchException = new NestedServletException(&quot;Handler dispatch failed&quot;, var21);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                this.processDispatchResult(processedRequest, response, mappedHandler, mv, (Exception)dispatchException);</span><br><span class="line">            &#125; catch (Exception var22) &#123;</span><br><span class="line">                this.triggerAfterCompletion(processedRequest, response, mappedHandler, var22);</span><br><span class="line">            &#125; catch (Throwable var23) &#123;</span><br><span class="line">                this.triggerAfterCompletion(processedRequest, response, mappedHandler, new NestedServletException(&quot;Handler processing failed&quot;, var23));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            if (asyncManager.isConcurrentHandlingStarted()) &#123;</span><br><span class="line">                if (mappedHandler != null) &#123;</span><br><span class="line">                    mappedHandler.applyAfterConcurrentHandlingStarted(processedRequest, response);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else if (multipartRequestParsed) &#123;</span><br><span class="line">                this.cleanupMultipart(processedRequest);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/27/IntelliJ IDEA For Mac 快捷键.html" class="archive-article-date">
-  	<time datetime="2018-08-27T02:11:21.619Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/27/IntelliJ IDEA For Mac 快捷键.html">IntelliJ IDEA For Mac 快捷键</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMvc</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -198,115 +213,53 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/23/在线工具.html" class="archive-article-date">
-  	<time datetime="2018-08-23T08:25:07.923Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/27/IntelliJ IDEA For Mac 快捷键.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IntelliJ IDEA For Mac 快捷键</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/23/在线工具.html">在线工具</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/programing//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/23/Linux常用命令汇总.html" class="archive-article-date">
-  	<time datetime="2018-08-23T05:35:41.068Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/23/Linux常用命令汇总.html">Linux常用命令汇总</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/programing//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -328,9 +281,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
