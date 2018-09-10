@@ -146,6 +146,112 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ZooKeeper伪集群安装与部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/10/ZooKeeper伪集群安装与部署.html">ZooKeeper伪集群安装与部署</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/10/ZooKeeper伪集群安装与部署.html" class="archive-article-date">
+  	<time datetime="2018-09-10T07:30:35.686Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>ZooKeeper下载与安装</p>
+</blockquote>
+<h6 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz</span><br></pre></td></tr></table></figure>
+<h6 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf zookeeper-3.4.13.tar.gz</span><br></pre></td></tr></table></figure>
+<p>分别配置3个如：<br><img src="https://s1.ax1x.com/2018/09/10/iFefx0.png" alt=""></p>
+<blockquote>
+<p>ZooKeeper部署</p>
+</blockquote>
+<p>拷贝配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /java/zk/zk1/conf</span><br><span class="line">cp zoo_samle.cfg zoo.cfg</span><br></pre></td></tr></table></figure></p>
+<p>修改zoo.cfg<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim zoo.cfg</span><br></pre></td></tr></table></figure></p>
+<p>k2，k3同理…</p>
+<p>配置集群zk1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clientPort=2181  </span><br><span class="line">server.1=127.0.0.1:2888:3888</span><br><span class="line">server.2=127.0.0.1:2889:3889</span><br><span class="line">server.3=127.0.0.1:2890:3890</span><br></pre></td></tr></table></figure></p>
+<p>配置集群zk2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clientPort=2182 </span><br><span class="line">server.1=127.0.0.1:2888:3888</span><br><span class="line">server.2=127.0.0.1:2889:3889</span><br><span class="line">server.3=127.0.0.1:2890:3890</span><br></pre></td></tr></table></figure></p>
+<p>配置集群zk3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clientPort=2183</span><br><span class="line">server.1=127.0.0.1:2888:3888</span><br><span class="line">server.2=127.0.0.1:2889:3889</span><br><span class="line">server.3=127.0.0.1:2890:3890</span><br></pre></td></tr></table></figure></p>
+<p>启动zookeeper</p>
+<p>zk1:</p>
+<p>cd /java/zk/zk1/bin/<br>./zkServer/sh start zoo.cfg</p>
+<p>zk2:</p>
+<p>cd /java/zk/zk2/bin/<br>./zkServer/sh start zoo.cfg</p>
+<p>zk3:</p>
+<p>cd /java/zk/zk3/bin/<br>./zkServer/sh start zoo.cfg</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">分布式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/programing//" class="article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/10/ZooKeeper伪集群安装与部署.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux上布署Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -951,85 +1057,10 @@
 
 
   
-    <article id="post-读《书都不会读，你还想成功》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/读《书都不会读，你还想成功》.html">读《书都不会读，你还想成功》</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/19/读《书都不会读，你还想成功》.html" class="archive-article-date">
-  	<time datetime="2018-05-19T04:05:05.158Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>作者：二志成 郑会一 </p>
-</blockquote>
-<p>写完了题目着实不知道后面该如何去写，决定多读书也有一段时间了，之前一直在用的微信读书，体验也很好，大家一起读书，有时候也挻有乐趣的。但有时候看久了确实眼睛受不了而且没有PC端，结果一剁手买了一个Kindle，立马高大上了，谁用谁知道……</p>
-        
-          <a class="article-more-a" href="/2018/05/19/读《书都不会读，你还想成功》.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/informal//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/19/读《书都不会读，你还想成功》.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1119,6 +1150,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpringMvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
               </li>
             
             <div class="clearfix"></div>
