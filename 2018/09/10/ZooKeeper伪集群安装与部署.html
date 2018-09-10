@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://snail001.github.io">
   <title>ZooKeeper伪集群安装与部署 | Snail的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ZooKeeper下载与安装  下载： 1wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz 解压解 1tar -zxvf zookeeper-3.4.13.tar.gz 分别配置3个如：">
+  <meta name="description" content="ZooKeeper下载与安装  下载： 1wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz 解压解： 1tar -zxvf zookeeper-3.4.13.tar.gz 分别配置3个如：">
 <meta name="keywords" content="分布式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZooKeeper伪集群安装与部署">
 <meta property="og:url" content="https://snail001.github.io/2018/09/10/ZooKeeper伪集群安装与部署.html">
 <meta property="og:site_name" content="Snail的博客">
-<meta property="og:description" content="ZooKeeper下载与安装  下载： 1wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz 解压解 1tar -zxvf zookeeper-3.4.13.tar.gz 分别配置3个如：">
+<meta property="og:description" content="ZooKeeper下载与安装  下载： 1wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz 解压解： 1tar -zxvf zookeeper-3.4.13.tar.gz 分别配置3个如：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s1.ax1x.com/2018/09/10/iFefx0.png">
-<meta property="og:updated_time" content="2018-09-10T07:57:20.986Z">
+<meta property="og:updated_time" content="2018-09-10T08:00:16.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZooKeeper伪集群安装与部署">
-<meta name="twitter:description" content="ZooKeeper下载与安装  下载： 1wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz 解压解 1tar -zxvf zookeeper-3.4.13.tar.gz 分别配置3个如：">
+<meta name="twitter:description" content="ZooKeeper下载与安装  下载： 1wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz 解压解： 1tar -zxvf zookeeper-3.4.13.tar.gz 分别配置3个如：">
 <meta name="twitter:image" content="https://s1.ax1x.com/2018/09/10/iFefx0.png">
   
     <link rel="alternative" href="/atom.xml" title="Snail的博客" type="application/atom+xml">
@@ -172,9 +172,10 @@
 </blockquote>
 <p>下载：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz</span><br></pre></td></tr></table></figure>
-<p>解压解</p>
+<p>解压解：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf zookeeper-3.4.13.tar.gz</span><br></pre></td></tr></table></figure>
-<p>分别配置3个如：<br><img src="https://s1.ax1x.com/2018/09/10/iFefx0.png" alt=""></p>
+<p>分别配置3个如：</p>
+<p><img src="https://s1.ax1x.com/2018/09/10/iFefx0.png" alt=""></p>
 <a id="more"></a>
 <blockquote>
 <p>ZooKeeper部署</p>
@@ -186,7 +187,7 @@
 <p>配置集群zk2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clientPort=2182 </span><br><span class="line">server.1=127.0.0.1:2888:3888</span><br><span class="line">server.2=127.0.0.1:2889:3889</span><br><span class="line">server.3=127.0.0.1:2890:3890</span><br></pre></td></tr></table></figure></p>
 <p>配置集群zk3：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clientPort=2183</span><br><span class="line">server.1=127.0.0.1:2888:3888</span><br><span class="line">server.2=127.0.0.1:2889:3889</span><br><span class="line">server.3=127.0.0.1:2890:3890</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>启动zookeeper</p>
+<p>ZooKeeper启动</p>
 </blockquote>
 <p>zk1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /java/zk/zk1/bin/</span><br><span class="line">./zkServer/sh start zoo.cfg</span><br></pre></td></tr></table></figure></p>
 <p>zk2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /java/zk/zk2/bin/</span><br><span class="line">./zkServer/sh start zoo.cfg</span><br></pre></td></tr></table></figure></p>
